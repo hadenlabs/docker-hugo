@@ -46,7 +46,7 @@ Usage
 
 .. code-block:: bash
 
-  λ make build
+  λ make docker.build version={{version}}
 
 Actions:
 ========
@@ -58,7 +58,6 @@ Actions:
 
     Usage:
         environment               create environment with pyenv
-        install                   install dependences python by env
         clean                     remove files of build
         setup                     install requirements
 
@@ -68,16 +67,7 @@ Actions:
 
         Docker:
 
-            docker.build         build all or one example: make docker.build service={{services}}  args=(--pull|...)
-            docker.down          down services docker-compose
-            docker.exec          exec command in container by {{services}} {{command}}
-            docker.ssh           connect by ssh to container
-            docker.stop          stop services by env
-            docker.verify_network           verify network
-            docker.up             up services of docker-compose
-            docker.run            run {service} {env}
-            docker.restart        restart by {env}
-            docker.list           list services of docker
+            docker.build         build all or one example: make docker.build version={{version}}
 
         Docs:
 
