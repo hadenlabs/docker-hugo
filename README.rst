@@ -1,6 +1,9 @@
 docker-hugo
 ===========
 
+Build
+-----
+
 |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
@@ -8,6 +11,11 @@ docker-hugo
 :Download: http://github.com/hadenlabs/docker-hugo
 :Source: http://github.com/hadenlabs/docker-hugo
 :Keywords: docker-hugo
+
+Docker Image:
+-------------
+
+|MicroBadger| |Docker Stars| |Docker Pulls|
 
 .. contents:: Table of Contents:
     :local:
@@ -129,6 +137,14 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
    :target: https://github.com/luismayta
+
+.. Badges for images hub docker
+.. |MicroBadger| image:: https://images.microbadger.com/badges/image/hadenlabs/hugo.svg
+   :target: http://microbadger.com/images/hadenlabs/hugo
+.. |Docker Stars| image:: https://img.shields.io/docker/stars/hadenlabs/hugo.svg?style=flat-square
+   :target: https://hub.docker.com/r/hadenlabs/hugo
+.. |Docker Pulls| image:: https://img.shields.io/docker/pulls/hadenlabs/hugo.svg?style=flat-square
+   :target: https://hub.docker.com/r/hadenlabs/hugo
 
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
