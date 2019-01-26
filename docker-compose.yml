@@ -1,6 +1,17 @@
-version: '3'
+# Docker Compose
+# https://docs.docker.com/compose/
+# Usage: docker-compose up
+---
+version: "3"
 services:
-  docker:
-    restart: always
-    build: .
-    image: python:3.6
+
+  app:
+    build:
+      context: .
+      dockerfile: provision/docker/app/Dockerfile
+    environment: &environment
+      - STAGE=local
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
