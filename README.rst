@@ -1,7 +1,7 @@
 docker-hugo
-###########
+===========
 
-|Python| |Build Status| |Pyup| |GitHub issues| |license|
+|Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
 :Web: https://github.com/hadenlabs/docker-hugo
@@ -12,15 +12,13 @@ docker-hugo
 .. contents:: Table of Contents:
     :local:
 
-Docker-Hugo
-
 Features
-========
+--------
 
-- Task
+* Task
 
-Requirements:
-=============
+Dependencies
+------------
 
 List of applications:
 
@@ -48,80 +46,100 @@ Usage
 
   λ make docker.build version={{version}}
 
-Actions:
-========
+
+Support
+-------
+
+If you want to support this project, i only accept ``IOTA`` :p.
 
 .. code-block:: bash
 
-  λ make
-    ༼ つ ◕_◕ ༽つ Makefile for docker-hugo
+    Address: FTDCZELEMOQGL9MBWFZENJLFIZUBGMXLFVPRB9HTWYDYPTFKASJCEGJMSAXUWDQC9SJUDMZVIQKACQEEYPEUYLAMMD
 
-    Usage:
-        environment               create environment with pyenv
-        clean                     remove files of build
-        setup                     install requirements
 
-        Alias:
+Team
+----
 
-            env        environment
-
-        Docker:
-
-            docker.build         build all or one example: make docker.build version={{version}}
-
-        Docs:
-
-            docs.show                  Show restview README
-            docs.make.html             Make documentation html
++---------------+
+| |Luis Mayta|  |
++---------------+
+| `luis mayta`_ |
++---------------+
 
 License
-=======
+-------
 
 MIT
 
 Changelog
-=========
+---------
 
 Please see `CHANGELOG`_ for more information what
 has changed recently.
 
 Contributing
-============
+------------
 
-Please see `CONTRIBUTING`_ for details.
+Contributions are welcome!
 
-Credits
-=======
+Review the `CONTRIBUTING`_ for details on how to:
 
--  `author`_
--  `contributors`_
+* Submit issues
+* Submit pull requests
 
-Made with ♥️and ☕️by `author`_ and `company`_.
+Contact Info
+------------
 
-.. |Pyup| image:: https://pyup.io/repos/github/hadenlabs/docker-hugo/shield.svg
-     :target: https://pyup.io/repos/github/hadenlabs/docker-hugo/
-     :alt: Updates
-.. |Python| image:: https://pyup.io/repos/github/hadenlabs/docker-hugo/python-3-shield.svg
-     :target: https://pyup.io/repos/github/hadenlabs/docker-hugo/
-     :alt: Python 3
-.. |Build Status| image:: https://travis-ci.org/hadenlabs/docker-hugo.svg
-   :target: https://travis-ci.org/hadenlabs/docker-hugo
-.. |GitHub issues| image:: https://img.shields.io/github/issues/hadenlabs/docker-hugo.svg
-   :target: https://github.com/hadenlabs/docker-hugo/issues
+Feel free to contact me to discuss any issues, questions, or comments.
 
-.. |license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-  :target: LICENSE
-  :alt: License
+* `Email`_
+* `Twitter`_
+* `GitHub`_
+* `LinkedIn`_
+* `Website`_
+* `PGP`_
+
+|linkedin| |beacon| |made|
+
+Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 
 .. Links
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
 .. _`contributing`: CONTRIBUTING.rst
 
-.. _`company`: https://github.com/hadenlabs
-.. _`author`: https://github.com/luismayta
+.. _`hadenlabs`: https://github.com/hadenlabs
+.. _`luis mayta`: https://github.com/luismayta
 
-.. dependences
+.. _`Github`: https://github.com/luismayta
+.. _`Linkedin`: https://www.linkedin.com/in/luismayta
+.. _`Email`: slovacus@gmail.com
+    :target: mailto:slovacus@gmail.com
+.. _`Twitter`: https://twitter.com/slovacus
+.. _`Website`: http://luismayta.github.io
+.. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
+
+.. |Build Status| image:: https://travis-ci.org/hadenlabs/docker-hugo.svg
+   :target: https://travis-ci.org/hadenlabs/docker-hugo
+.. |GitHub issues| image:: https://img.shields.io/github/issues/hadenlabs/docker-hugo.svg
+   :target: https://github.com/hadenlabs/docker-hugo/issues
+.. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
+   :target: LICENSE
+
+.. Team:
+.. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
+   :target: https://github.com/luismayta
+
+.. Footer:
+.. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
+   :target: http://pe.linkedin.com/in/luismayta
+.. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/hadenlabs/docker-hugo/readme
+   :target: https://github.com/hadenlabs/docker-hugo
+.. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
+   :target: http://www.zsh.org
+
+.. Dependences:
+
 .. _Python 3.6.4: https://www.python.org/downloads/release/python-364
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
