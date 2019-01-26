@@ -44,7 +44,7 @@ Usage
 
 .. code-block:: bash
 
-  λ make docker.build version={{version}}
+  λ make build version={{version}}
 
 
 Support
