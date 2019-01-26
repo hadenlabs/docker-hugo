@@ -32,6 +32,7 @@ help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
 	@echo ''
 	@echo 'Usage:'
+	@echo '    build                     Image docker with {version}'
 	@echo '    environment               create environment with pyenv'
 	@echo '    clean                     remove files of build'
 	@echo '    setup                     install requirements'
@@ -40,6 +41,11 @@ help:
 	@make docker.help
 	@make docs.help
 	@make test.help
+
+build:
+	docker build --no-cache --build-arg version=${version} -t hadenlabs/hugo:${version} -f Dockerfile .
+	docker login
+	docker push hadenlabs/hugo:${version}
 
 clean:
 	@echo "$(TAG)"Cleaning up"$(END)"
