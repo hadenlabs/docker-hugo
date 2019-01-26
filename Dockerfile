@@ -1,4 +1,4 @@
-FROM golang:1.10.0
+FROM golang:1.11.4
 MAINTAINER slovacus@gmail.com
 
 ARG version
@@ -11,18 +11,18 @@ RUN \
     sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y build-essential \
-    && apt-get install -y software-properties-common \
-    && apt-get install -y curl git man unzip vim wget zsh \
-    # Install pygments (for syntax highlighting)
-    && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments \
-    && rm -rf /var/lib/apt/lists/* \
-    # Download and install hugo
-    && rm -rf /usr/local/bin/hugo &> /dev/null \
-    && wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz -P /usr/local/ \
-    && tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
-    && ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo \
-    && rm -rf /usr/local/${HUGO_BINARY}.tar.gz \
-    && rm -rf /var/lib/apt/lists/*
+  software-properties-common \
+  curl git man unzip vim wget zsh \
+  # Install pygments (for syntax highlighting)
+  && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments \
+  && rm -rf /var/lib/apt/lists/* \
+  # Download and install hugo
+  && rm -rf /usr/local/bin/hugo &> /dev/null \
+  && wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz -P /usr/local/ \
+  && tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
+  && ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo \
+  && rm -rf /usr/local/${HUGO_BINARY}.tar.gz \
+  && rm -rf /var/lib/apt/lists/*
 
 # Define working directory.
 WORKDIR /docker

@@ -7,7 +7,6 @@ OS := $(shell uname)
 .DEFAULT_GOAL := help
 
 PROJECT := docker-hugo
-PROJECT_PORT := 8000
 
 PYTHON_VERSION=3.6.4
 PYENV_NAME="${PROJECT}"
@@ -15,7 +14,7 @@ PYENV_NAME="${PROJECT}"
 # Configuration.
 SHELL := /bin/bash
 ROOT_DIR=$(shell pwd)
-MESSAGE:=༼ つ ◕_◕ ༽つ
+MESSAGE:=🍺️
 MESSAGE_HAPPY:="${MESSAGE} Happy Coding"
 SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements
@@ -33,30 +32,39 @@ help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
 	@echo ''
 	@echo 'Usage:'
+	@echo '    build                     Image docker with {version}'
 	@echo '    environment               create environment with pyenv'
-	@echo '    install                   install dependences python by env'
 	@echo '    clean                     remove files of build'
 	@echo '    setup                     install requirements'
 	@echo ''
 	@make alias.help
 	@make docker.help
 	@make docs.help
+	@make test.help
+
+build:
+	docker build --no-cache --build-arg version=${version} -t hadenlabs/hugo:${version} -f Dockerfile .
+	docker login
+	docker push hadenlabs/hugo:${version}
 
 clean:
 	@echo "$(TAG)"Cleaning up"$(END)"
 ifneq (Darwin,$(OS))
-	@sudo rm -rf .tox *.egg dist build .coverage
+	@sudo rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
 	@sudo rm -rf docs/build
-	@sudo find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.tmp' -delete -print
+	@sudo find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
 else
-	@rm -rf .tox *.egg dist build .coverage
+	@rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
 	@rm -rf docs/build
-	@find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.tmp' -delete -print
+	@find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
 endif
 	@echo
 
 setup: clean
 	$(pip_install) "${REQUIREMENTS_DIR}/setup.txt"
+	@if [ -e "${REQUIREMENTS_DIR}/private.txt" ]; then \
+			$(pip_install) "${REQUIREMENTS_DIR}/private.txt"; \
+	fi
 	pre-commit install
 	cp -rf .hooks/prepare-commit-msg .git/hooks/
 	@if [ ! -e ".env" ]; then \
@@ -68,5 +76,5 @@ environment: clean
 		eval "$(pyenv init -)"; \
 		eval "$(pyenv virtualenv-init -)"; \
 	fi
-	pyenv virtualenv "${PYTHON_VERSION}" "${PYENV_NAME}" >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
-	pyenv activate "${PYENV_NAME}" >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
+	pyenv virtualenv ${PYTHON_VERSION} ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
+	pyenv activate ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
