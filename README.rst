@@ -6,7 +6,7 @@ Build
 
 |Build Status| |GitHub issues| |GitHub license|
 
-:Version: 0.0.0
+:Version: 0.1.0
 :Web: https://github.com/hadenlabs/docker-hugo
 :Download: http://github.com/hadenlabs/docker-hugo
 :Source: http://github.com/hadenlabs/docker-hugo
