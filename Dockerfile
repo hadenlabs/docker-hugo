@@ -7,20 +7,20 @@ ENV HUGO_VERSION=$version
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit
 
 # Install.
-RUN \
-    sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get install -y build-essential \
+RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
+  && apt-get update -y \
+  && apt-get install -y \
+  build-essential \
   software-properties-common \
   curl git man unzip vim wget zsh \
   # Install pygments (for syntax highlighting)
-  && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments \
+  && apt-get install -y --no-install-recommends python-pygments python \
   && rm -rf /var/lib/apt/lists/* \
   # Download and install hugo
-  && rm -rf /usr/local/bin/hugo &> /dev/null \
+  && rm -rf /usr/local/bin/hugo \
   && wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz -P /usr/local/ \
   && tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
-  && ln -s /usr/local/${HUGO_BINARY}/hugo /usr/local/bin/hugo \
+  && ln -s /usr/local/hugo /usr/local/bin/hugo \
   && rm -rf /usr/local/${HUGO_BINARY}.tar.gz \
   && rm -rf /var/lib/apt/lists/*
 
