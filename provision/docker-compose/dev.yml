@@ -7,13 +7,13 @@ services:
   app:
     environment: &environment
       - STAGE=local
-    image: docker-hugo-app-dev:0.1.0
+    image: docker-hugo-app-dev:0.1.1
     build:
       args:
         stage: dev
 
   check:
-    image: docker-hugo-check-dev:0.1.0
+    image: docker-hugo-check-dev:0.1.1
     environment: *environment
     build:
       context: .
