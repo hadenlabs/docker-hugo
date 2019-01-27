@@ -20,7 +20,6 @@ SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements
 PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
-KEYS_DIR:="${HOME}/.ssh"
 PATH_DOCKER_COMPOSE:=provision/docker-compose
 
 pip_install := pip install -r
