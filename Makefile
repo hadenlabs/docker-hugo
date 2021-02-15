@@ -54,7 +54,7 @@ DOCKER_SERVICE_TEST:=app
 
 PARENT_IMAGE := hugo
 IMAGE := hadenlabs/hugo
-VERSION ?= latest
+VERSION ?= 0.80.0
 
 docker-build:= docker build --quiet -t
 docker-push:= docker push
