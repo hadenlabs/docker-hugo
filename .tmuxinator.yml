@@ -1,6 +1,6 @@
 # ~/.tmuxinator/docker-hugo.yml
 name: docker-hugo
-root: <%= ENV["PROJECTS"] %>/docker/docker-hugo
+root: ./
 # Optional tmux socket
 # socket_name: foo
 
@@ -19,14 +19,13 @@ on_project_start: make environment
 # on_project_restart: command
 
 # Run on project exit ( detaching from tmux session )
-on_project_exit: make docker.down
+# on_project_exit: make docker.down
 
 # Run on project stop
-on_project_stop: make docker.down
+# on_project_stop: make docker.down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: pyenv activate docker-hugo
-
+# pre_window: eval $(env-secrets bw github.com/hadenlabs/docker-hugo)
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
@@ -37,25 +36,14 @@ pre_window: pyenv activate docker-hugo
 startup_window: docker
 
 windows:
-  - editor:
-      layout: even-horizontal
-      panes:
-        - editor:
-        - pwd:
-        - pwd:
   - python:
       layout: main-vertical
       panes:
         - ipython:
-  - databases:
+  - cloud:
       layout: main-vertical
       panes:
-        - postgresql:
-        - ls:
-  - aws:
-      layout: main-vertical
-      panes:
-        - webserver:
+        - cloud:
         - databases:
   - docker:
       layout: main-vertical
