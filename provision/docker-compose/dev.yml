@@ -1,19 +1,18 @@
 # Docker Compose
 # https://docs.docker.com/compose/
 
-version: "3"
 services:
   # Python
   app:
     environment: &environment
       - STAGE=local
-    image: docker-hugo-app-dev:0.1.1
+    image: docker-hugo-app-dev
     build:
       args:
         stage: dev
 
   check:
-    image: docker-hugo-check-dev:0.1.1
+    image: docker-hugo-check-dev
     environment: *environment
     build:
       context: .
