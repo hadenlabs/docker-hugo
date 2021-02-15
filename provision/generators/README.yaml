@@ -1,0 +1,75 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: docker-hugo
+
+company:
+  name: hadenlabs
+  description: |-
+    company labs
+  url: https://hadenlabs.com
+  github: https://github.com/hadenlabs
+  email: support@hadenlabs.com
+
+copyright:
+  name: Hadenlabs
+  url: https://hadenlabs.com
+
+email:
+  support: support@hadenlabs.com
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: 'APACHE2'
+
+# Canonical GitHub repo
+github_repo: hadenlabs/docker-hugo
+
+# Badges to display
+badges:
+  - name: 'Build Status'
+    image: 'https://travis-ci.org/hadenlabs/docker-hugo.svg?branch=main'
+    url: 'https://travis-ci.org/hadenlabs/docker-hugo'
+  - name: 'Latest Release'
+    image: 'https://img.shields.io/github/release/hadenlabs/docker-hugo.svg'
+    url: 'https://travis-ci.org/hadenlabs/docker-hugo/releases'
+  - name: 'Micro Badger'
+    image: 'https://images.microbadger.com/badges/image/hadenlabs/hugo.svg'
+    url: 'http://microbadger.com/images/hadenlabs/hugo'
+
+# Short description of this project
+description: |-
+  Docker Hugo.
+
+requirements: |-
+
+  List of applications:
+
+  - [Python 3.8.0](https://www.python.org/downloads/release/python-380)
+  - [Docker](https://www.docker.com/)
+  - [Docker Compose](https://docs.docker.com/compose/)
+
+usage: |-
+
+  - Install dependences
+
+  ```{.bash}
+  make setup
+  ```
+
+  - Build images
+
+  ```{.bash}
+  make build version={{version}}
+  ```
+
+# Contributors to this project
+contributors:
+  - name: 'Luis Mayta'
+    github: 'luismayta'
