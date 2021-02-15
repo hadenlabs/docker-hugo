@@ -13,7 +13,7 @@ hub.help:
 hub.build:
 	@echo " =====> Building $(IMAGE):${version}..."
 	@if [ -z ${version} ]; then \
-		$(docker-build) $(IMAGE):latest ;\
+		$(docker-build) $(IMAGE):latest images/${VERSION} ;\
 	else \
 		$(docker-build) $(IMAGE):${version} images/${version} ;\
 	fi
