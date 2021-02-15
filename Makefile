@@ -52,8 +52,8 @@ DOCKER_SERVICE_TEST:=app
 
 # docker settings
 
-PARENT_IMAGE := python
-IMAGE := hadenlabs/python
+PARENT_IMAGE := hugo
+IMAGE := hadenlabs/hugo
 VERSION ?= latest
 
 docker-build:= docker build --quiet -t
